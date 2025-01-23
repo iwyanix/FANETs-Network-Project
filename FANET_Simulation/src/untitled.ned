@@ -1,17 +1,4 @@
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/.
-//
+//Having an issue with setting up the INET Framework 
 package fanet;
 
 import inet.node.adhoc.AdhocHost;
@@ -23,11 +10,11 @@ import inet.node.inet.Router;
 network FANET {
 
 submodules:
-
+// I chose 10 uavs as a start, this value can be modified
 uav[10]: AdhocHost {
 
 @display(“p=100,100;i=block/circle”);
-
+// Using RrandomWayPoint for setting up the UAVs, not realistic but there are other realistic models, like Gaus's
 mobility.typename = “RandomWaypointMobility”;
 
 mobility.initialX = uniform(0, 1000);
@@ -51,3 +38,6 @@ uav[i].pppg++ <–> gcs.pppg++;
 }
 
 }
+
+
+// All the values in this .ned file are completely randomly chosen
